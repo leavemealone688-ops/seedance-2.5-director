@@ -101,4 +101,7 @@ cd seedance25-skill
 
 如果这个 skill 帮到了你，欢迎请作者喝杯咖啡 ☕ If this skill helped you, consider buying me a coffee.
 
+- Ko-fi（PayPal / 信用卡，海外推荐）：[ko-fi.com/jasonshortdramas](https://ko-fi.com/jasonshortdramas)
+- 支付宝 Alipay（国内）：
+
 <img src="assets/alipay.jpg" alt="支付宝 Alipay" width="220">
