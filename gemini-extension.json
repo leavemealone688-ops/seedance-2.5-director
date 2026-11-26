@@ -1,0 +1,6 @@
+{
+  "name": "seedance25-skill",
+  "version": "1.0.0",
+  "description": "Seedance 2.5 提示词、分镜与剧本脚本写作技能（国内/海外平台两套写法）",
+  "contextFileName": "GEMINI.md"
+}
