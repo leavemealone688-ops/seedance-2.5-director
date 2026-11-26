@@ -1,0 +1,19 @@
+# 無對白 + 光線漸變（小云雀 · 9:16 · 10s · 720P · 参考生成）
+
+參考順序同上一條；图片4 = 上一鏡剪輯出點（約 6.0s）的銜接幀。
+
+| 秒段 | 內容 |
+|---|---|
+| 0-2s | 同上一鏡構圖；Edna 悄悄把腳從平底鞋裡退出來；鏡頭開始輕微下降靠近 |
+| 2-5s | 赤腳踩在碎石上，鞋隨意留在原地；光開始變暖 |
+| 5-10s | 光定在 3200K 暖金，只是天光變化；Cole 一口氣 |
+
+QC 結論（當時）：留用；後半段鏡頭偏下半身，剪輯時裁短；靜音模型鋼琴。
+
+```
+Vertical 9:16 cinematic realistic drama, photorealistic, 10 seconds. Image 1 is the elderly woman Edna: same face, same short wavy silver-white hair, same kind eyes, same small gold stud earrings, same teal-green linen jacket over a cream button blouse, same long navy skirt, same brown leather flats at the start of the shot. Image 2 is firefighter Cole: same face, same short brown hair faded at the sides, same light stubble, same dirty navy blue t-shirt, same reddish-brown leather suspenders, same stained tan firefighter pants. Image 3 is the old golden retriever Bo: same dog, white-gray muzzle, a clean bandage on one front paw, a worn red collar. Image 4 is only a continuity frame from near the end of the previous shot: use it for the same camera side, the same medium framing and distance, the same cool misty light, the same red pickup with its tailgate down, and the same positions of the man, the woman, and the dog; do not copy any signs, logos, or lettering from Image 4. Only these two people and this one dog appear; no weapons, blood, fire, or medical procedure.
+
+The shot MUST open in the same framing and space as Image 4, on the same camera side of the truck. Cole sits on the left edge of the open tailgate in a medium shot, close enough that he and the dog fill the frame. One hand rests gently on the dog's head, fingers clearly separate from the fur. Bo lies calm and alert on a worn blanket on the tailgate. Edna stands close at Cole's right, as in Image 4; her mouth is at rest, and no one speaks in this shot. Quiet clinic exterior, cool misty morning, about 4800K at the opening, gravel underfoot. The clinic wall is plain and blank. After the opening beat, the camera eases a little closer and slightly down, so the clinic building leaves the top of the frame. The truck has no lettering; left-hand drive.
+
+One continuous shot, no cuts, no spoken dialogue, brisk natural pacing with no idle pauses and no ceremonial business. 0-2s: open on the same medium framing as Image 4. Almost immediately, without drawing attention to it, Edna shifts her weight and quietly slips her feet out of the brown leather flats, heel first, one then the other, the way someone might when they mean to stay a moment; not a ritual, she does not look down or use her hands. The camera begins a modest ease down and slightly closer, revealing her feet on the gravel; Cole and Bo remain large and clearly present. 2-5s: both bare feet settle flat on the cool gravel. The empty flats stay where they came off, unarranged, by her feet, for the rest of the shot; she does not pick them up, point, or sit. Her hands stay relaxed at her sides. As soon as her bare feet are on the ground, the cool light begins to warm. 5-10s: the light settles into a soft warm 3200K gold, as if weak sun has found a break in the overcast, washing the tailgate and the old dog's muzzle. It is only a change of daylight, gradual and understated; no beam, flash, particles, or supernatural effect. The color stays warm gold through the end, never jumping back to cool blue. Cole takes a small breath, glancing at the light on the dog, subtle. Natural hands with five fingers; natural bare feet with five toes. Sound: quiet morning air, a soft scuff of flats on gravel, faint wind, no music, no speech. No text on screen, no signs, no lettering anywhere.
+```

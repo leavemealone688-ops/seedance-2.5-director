@@ -1,96 +1,231 @@
-# Seedance 2.5 提示词 · 分镜 · 剧本脚本 Skill
+🌐 [English](README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [한국어](README.ko.md) · [日本語](README.ja.md) · [Español](README.es.md) · [Português (BR)](README.pt-BR.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md) · [العربية](README.ar.md) · [Русский](README.ru.md)
 
-一套给 AI 编程助手 / 智能体用的 **Seedance 2.5 视频生产技能包**：从一句话定位、可拍剧本、分镜拆解，到可直接粘贴的提示词、出片 QC 和后期。规则来自真实的竖屏短剧与预告片生产，并对照了官方公开指南。
+# Seedance 2.5 Director
 
-- 分**国内平台**（小云雀、LibTV、即梦）和**海外平台**（Vigloo Studio、TapNow、Higgsfield）两套写法
-- 全面一致性：角色、服装状态、场景拓扑、道具状态、光色、轴线与银幕方向、天气、跨集、资产命名
-- 爆款结构：前 3 秒钩子、留存节奏、反转兑现、集尾钩子、封面标题、用后台数据迭代
-- 模板 + 样例 + 脚本（联系表抽帧、衔接帧、字符计数、预算估算）
+**Seedance 2.5 Prompts · Storyboards · Scripts Skill**
 
-> 平台价格、上限、功能随时变化。文中数字都标了来源和日期（截至 2026-11），**使用前请在平台核实**；没验证过的写"未实测"。
+A **Seedance 2.5 video-production skill pack** for AI coding assistants and agents: from a one-line pitch and a shootable script, through shot breakdowns, to paste-ready prompts, render QC and post. The rules come from real vertical short-drama and trailer production, checked against the official public guides.
 
-## 目录
+- Two playbooks: **China platforms** (Xiaoyunque, LibTV, Jimeng) and **overseas platforms** (Vigloo Studio, TapNow, Higgsfield)
+- Full consistency: characters, wardrobe states, scene layout, prop states, light and color, axis and screen direction, weather, cross-episode, asset naming
+- Viral structure: 3-second hooks, retention rhythm, twists and payoffs, episode-end hooks, covers and titles, iterating with your own analytics
+- Templates + examples + scripts (contact sheets, continuity frames, character counts, budget estimates)
+- Available in 14 languages
+
+> Platform prices, limits and features change at any time. Every number carries a source and date (as of 2026-11): **verify on the platform before use**. Anything we haven't tested is marked "untested".
+
+## What this skill does for creators
+
+The everyday problems of making AI drama with Seedance 2.5, and what changes when your assistant follows this skill. The examples are short excerpts of the prompt style the skill teaches.
+
+### 1. Turn a one-line idea into shootable shot prompts
+
+**Before**
+```text
+An old woman comforts a man whose dog is sick.
+```
+**After**
+```text
+0-2s: medium, truck right. Edna enters from the porch and stops beside Cole.
+2-7s: Edna, warm husky older female voice: "Don't let fear be what he sees." Only Edna speaks.
+7-10s: Cole looks up, one breath, looks down at the dog. No long staring hold.
+```
+
+### 2. Keep faces, outfits, scenes and props consistent across shots and episodes
+
+**Before**
+```text
+Same woman as before, same clothes.
+```
+**After**
+```text
+Image 1 is Edna: same face, same short wavy silver-white hair, same small gold stud
+earrings, same teal-green linen jacket. No rings, no glasses.
+```
+
+### 3. Make every shot cut cleanly from the last
+
+**Before**
+```text
+(new shot opens anywhere; the lead ends up a tiny figure in the background)
+```
+**After**
+```text
+Image 4 is only a continuity frame: same camera side, framing and light;
+do not copy faces or lettering. The shot MUST open in the same framing as Image 4.
+```
+
+### 4. Hook viewers in 3 seconds, keep them watching, end each episode on a cliffhanger
+
+**Before**
+```text
+0-3s: slow aerial shot of the city at dusk.
+```
+**After**
+```text
+0-1s: open mid-action, the slap has just landed; first line within 1 s.
+…last beat ends on the frame that raises the new question; the frame holds still.
+```
+
+### 5. Dialogue, lip sync and voice that stay on the right character
+
+**Before**
+```text
+Lines listed at the end. "Her lips part."
+```
+**After**
+```text
+2-7s: Edna speaks in a warm, husky older American female voice: "…"
+Precise lip sync. Only Edna speaks; Cole's mouth stays closed, no lip movement.
+```
+
+### 6. Fewer rejected or wasted renders, and a budget before you spend credits
+
+**Before**
+```text
+Blood on the floor, he kills the guard. (submit and hope)
+```
+**After**
+```text
+He falls and stops moving. No blood, no weapons.
+$ python3 scripts/cost_calc.py --platform xiaoyunque --clips 8 --retry 0.5
+```
+
+### 7. Write for the platform you are actually on (China vs overseas)
+
+**Before**
+```text
+One prompt pasted everywhere; a photoreal portrait uploaded to Vigloo (rejected).
+```
+**After**
+```text
+Xiaoyunque: @图片1 portrait + 参考生成 · 9:16 · 10s
+Vigloo:     @Mina Character node + empty plate @image1 + voice @audio1
+```
+
+### 8. QC checklists and ffmpeg scripts instead of eyeballing
+
+**Before**
+```text
+Watch it once, notice six fingers after posting.
+```
+**After**
+```text
+$ scripts/contact_sheet.sh S03_v1.mp4 S03_v1_hands.png 6 6
+$ scripts/cut_frame.sh S02_v2.mp4 6.0 S02_v2_cut.png
+```
+
+### Who it's for
+
+- Short-drama creators making vertical series for Douyin, Shorts, Reels or drama apps
+- AI filmmakers making shorts, trailers and long takes
+- Brand and ad teams who need repeatable characters and on-spec cuts
+- Contest entrants who must hit a duration, aspect ratio and labeling rules
+
+No made-up success rates here: the skill tells your assistant to use only real analytics and real platform prices.
+
+## Languages
+
+Every language is its own valid skill folder with a unique `name`. Install only the one you need with `--lang`. Skill names are `seedance25-director[-<lang>]` (no dot), because skill names may only use lowercase letters, digits and hyphens.
+
+| Language | Folder | `--lang` | Translated |
+|---|---|---|---|
+| English | `skills/seedance25-director-en/` | `en` | Everything (SKILL.md, references, templates, example notes) |
+| 简体中文 | `skills/seedance25-director/` | `zh-cn` | Everything (SKILL.md, references, templates, example notes) |
+| 繁體中文 | `skills/seedance25-director-zh-tw/` | `zh-tw` | Everything (SKILL.md, references, templates, example notes) |
+| 한국어 | `skills/seedance25-director-ko/` | `ko` | Everything (SKILL.md, references, templates, example notes) |
+| 日本語 | `skills/seedance25-director-ja/` | `ja` | SKILL.md in this language; references / templates / examples in English for now |
+| Español | `skills/seedance25-director-es/` | `es` | SKILL.md in this language; references / templates / examples in English for now |
+| Português (BR) | `skills/seedance25-director-pt-br/` | `pt-br` | SKILL.md in this language; references / templates / examples in English for now |
+| Français | `skills/seedance25-director-fr/` | `fr` | SKILL.md in this language; references / templates / examples in English for now |
+| Deutsch | `skills/seedance25-director-de/` | `de` | SKILL.md in this language; references / templates / examples in English for now |
+| Bahasa Indonesia | `skills/seedance25-director-id/` | `id` | SKILL.md in this language; references / templates / examples in English for now |
+| Tiếng Việt | `skills/seedance25-director-vi/` | `vi` | SKILL.md in this language; references / templates / examples in English for now |
+| ไทย | `skills/seedance25-director-th/` | `th` | SKILL.md in this language; references / templates / examples in English for now |
+| العربية | `skills/seedance25-director-ar/` | `ar` | SKILL.md in this language; references / templates / examples in English for now |
+| Русский | `skills/seedance25-director-ru/` | `ru` | SKILL.md in this language; references / templates / examples in English for now |
+
+## Layout
 
 ```
-seedance25-skill/
-├── README.md               本文件
-├── LICENSE                 CC BY-NC 4.0 许可证全文
-├── AGENTS.md               给读 AGENTS.md 的工具的指针
-├── GEMINI.md               Gemini CLI 扩展上下文
-├── gemini-extension.json   Gemini CLI 扩展清单
-├── install.sh              一键安装到各工具目录 / 打包 zip
+seedance-2.5-director/
+├── README.md / README.<lang>.md   this file + translations
+├── LICENSE                 CC BY-NC 4.0
+├── AGENTS.md               pointer for tools that read AGENTS.md
+├── GEMINI.md               Gemini CLI extension context
+├── gemini-extension.json   Gemini CLI extension manifest
+├── install.sh              install into each tool / build zips
+├── assets/alipay.jpg
 └── skills/
-    └── seedance25-skill/   ← 唯一权威内容（标准 Agent Skill 文件夹）
-        ├── SKILL.md        入口：工作流 + 十条铁律
-        ├── references/     规则手册（平台、写法、一致性、爆款、QC、后期……）
-        ├── templates/      提示词 / 分镜表 / 剧本 / 资产表 / QC 模板
-        ├── examples/       改写自实跑的样例提示词
-        └── scripts/        ffmpeg 抽帧、字符计数、预算估算
+    ├── seedance25-director/         Simplified Chinese, the canonical version
+    │   ├── SKILL.md              entry: workflow + 11 hard rules
+    │   ├── references/           rulebooks (platforms, writing, consistency, hooks, QC, post…)
+    │   ├── templates/            prompt / storyboard / script / asset / QC templates
+    │   ├── examples/             example prompts adapted from real renders
+    │   └── scripts/              ffmpeg frame grabs, character count, budget estimate
+    └── seedance25-director-<lang>/  same skill in another language
 ```
 
-## 安装
+## Install
 
-需要：`bash`；脚本功能另需 `ffmpeg`/`ffprobe` 和 `python3`。
+Needs `bash`; the scripts also need `ffmpeg`/`ffprobe` and `python3`.
 
 ```bash
-git clone <你的仓库地址> seedance25-skill
-cd seedance25-skill
-./install.sh all            # 装到下面所有工具的用户级目录
-./install.sh claude         # 只装一个
-./install.sh cursor --project /path/to/your/repo   # 装到某个项目里
-./install.sh all --dry-run  # 只看会装到哪里
+git clone https://github.com/leavemealone688-ops/seedance-2.5-director.git
+cd seedance-2.5-director
+./install.sh all                       # every tool, every language
+./install.sh claude --lang en          # one tool, one language
+./install.sh codex --lang en,ko         # several languages
+./install.sh cursor --project /path/to/repo --lang en   # into one project
+./install.sh all --dry-run             # just show where it would go
+./install.sh workbuddy-zip --lang en   # zip for WorkBuddy upload
 ```
 
-已有同名目录会自动改名备份。安装方式是复制（部分工具会跳过软链）。
+An existing folder with the same name is renamed as a backup. Skills are copied, not symlinked (some tools skip symlinks). Tip: install one language per tool; with all 14 installed, the assistant sees 14 near-identical skills.
 
-### 各工具说明
+### Tool notes
 
-| 工具 | 用户级目录 | 项目级目录 | 兼容性 |
+| Tool | User folder | Project folder | Status |
 |---|---|---|---|
-| Claude Code | `~/.claude/skills/seedance25-skill/` | `.claude/skills/` | ✅ 按官方文档（code.claude.com/docs/en/skills）核实 |
-| OpenAI Codex（CLI / IDE） | `~/.agents/skills/`（旧版读 `~/.codex/skills/`） | `.agents/skills/` | ✅ 按官方文档核实；旧版 Codex 需在 `config.toml` 打开 skills 功能 |
-| Gemini CLI | `~/.gemini/skills/`（或 `~/.agents/skills/`） | `.gemini/skills/`（工作区需 `/trust`） | ✅ 按官方文档（geminicli.com）核实；`/skills list` 查看、`/skills reload` 刷新 |
-| Gemini CLI 扩展 | 整个仓库作为扩展（含 `gemini-extension.json`，技能在 `skills/` 下） | — | ✅ 扩展格式按官方文档核实；安装命令以官方文档为准 |
-| Cursor | `~/.cursor/skills/`（或 `~/.agents/skills/`） | `.cursor/skills/` | ✅ 按官方文档（cursor.com/docs/skills）核实；Cursor 也会读 `~/.claude/skills`、`~/.codex/skills` |
-| CodeBuddy Code（腾讯） | `~/.codebuddy/skills/` | `.codebuddy/skills/` | ✅ 按官方文档（codebuddy.ai/docs/zh/cli/skills）核实；`/skills` 查看 |
-| WorkBuddy（腾讯桌面端） | 客户端「技能 → 添加技能 → 上传技能」导入本地技能包 | 工作目录下的项目技能目录 | ⚠️ 未验证：官方页面写了"导入本地技能包"，但没写包格式。`./install.sh workbuddy-zip` 生成的 zip 是按 SKILL.md 文件夹打包的，未实测导入 |
+| Claude Code | `~/.claude/skills/` | `.claude/skills/` | ✅ checked against official docs (code.claude.com/docs/en/skills) |
+| OpenAI Codex (CLI / IDE) | `~/.agents/skills/` (older versions read `~/.codex/skills/`) | `.agents/skills/` | ✅ checked against official docs |
+| Gemini CLI | `~/.gemini/skills/` | `.gemini/skills/` | ✅ checked against official docs (geminicli.com); `/skills list`, `/skills reload` |
+| Gemini CLI extension | the whole repo (has `gemini-extension.json`, skills under `skills/`) | — | ✅ checked against official docs |
+| Cursor | `~/.cursor/skills/` | `.cursor/skills/` | ✅ checked against official docs (cursor.com/docs/skills) |
+| CodeBuddy Code | `~/.codebuddy/skills/` | `.codebuddy/skills/` | ✅ checked against official docs (codebuddy.ai/docs/zh/cli/skills) |
+| WorkBuddy | client: Skills → Add skill → Upload a local skill package | — | ⚠️ untested: the official page mentions importing a local skill package but not its format; `./install.sh workbuddy-zip` zips the SKILL.md folder, import not tested |
 
-各工具安装后：
-- **Claude Code**：输入 `/seedance25-skill` 手动调用，或直接提需求（"帮我把这场戏写成 Seedance 2.5 提示词"）自动触发。
-- **Codex**：输入 `$seedance25-skill` 或 `/skills` 选择。
-- **Gemini CLI**：`/skills list` 确认已加载；用户级目录不受 `/trust` 影响。
-- **Cursor**：在 Agent 对话里输入 `/` 搜索 `seedance25-skill`。
-- **CodeBuddy**：`/skills` 面板查看。
+After installing: in **Claude Code** type `/seedance25-director-en` (or just describe the task); in **Codex** type `$seedance25-director-en` or `/skills`; in **Gemini CLI** check `/skills list`; in **Cursor** type `/` in Agent chat and search `seedance25`; in **CodeBuddy** open `/skills`.
 
-### 只读规则、不装工具
+### Just read the rules
 
-直接从 `skills/seedance25-skill/SKILL.md` 开始读，按里面的工作流表跳到需要的文件。
+Start at `skills/seedance25-director-en/SKILL.md` and follow its workflow table to the files you need.
 
-## 快速上手
+## Quick start
 
-1. 告诉助手：平台（如小云雀 9:16 10s）、剧情、角色定妆照。
-2. 助手按 `SKILL.md` 流程给出：节拍表 → 参考图顺序 → 提示词正文（标字符数）→ 预算。
-3. 你确认后自己在平台提交（本技能不替你提交付费任务）。
-4. 出片后让助手跑 `scripts/contact_sheet.sh` 做 QC，再用 `scripts/cut_frame.sh` 截衔接帧写下一镜。
+1. Tell the assistant the platform (e.g. Xiaoyunque 9:16 10s), the story and the character portraits.
+2. It follows `SKILL.md` and returns: beat table → reference upload order → prompt body (with character count) → budget.
+3. You confirm and submit on the platform yourself (the skill never submits paid jobs for you).
+4. After the render, have it run `scripts/contact_sheet.sh` for QC, then `scripts/cut_frame.sh` to grab the continuity frame for the next shot.
 
-## 原则
+## Principles
 
-1. 每次生成都花钱：先报参数和预算，确认后再提交。
-2. 脸只认原始定妆照；衔接帧只管机位、站位、光色。
-3. 每个镜头从上一镜的构图和站位切过来。
-4. 表演自然、节奏紧，不写刻意象征动作。
-5. 模型配乐后期静音，空尾巴剪掉，烧录字幕无标点，竖屏封面 9:16。
-6. 数字不编，未知写"未实测"。
-7. 仓库里不放任何账号、密码、邮箱、密钥。
+1. Every render costs money: state settings and budget first, submit only after confirmation.
+2. Faces come only from the original portraits; continuity frames control only camera, blocking and color.
+3. Every shot cuts from the previous shot's framing and blocking.
+4. Natural acting, tight pacing, no on-the-nose symbolic gestures.
+5. Ask for sharp detail on the textures actually in the shot, with no blocky or grid-like compression artifacts.
+6. Mute model music in post, trim dead tails, punctuation-free burned-in subtitles, 9:16 covers.
+7. Never invent numbers; unknown means "untested". No accounts, passwords, emails or keys in the repo.
 
-## 贡献
+## Contributing
 
-- 新的实测结果请写明平台、日期、参数，更新对应的 `references/*.md` 和 `scripts/cost_calc.py` 费率表。
-- 只改 `skills/seedance25-skill/` 下的内容；`AGENTS.md`、`GEMINI.md` 只做指针。
+- New test results: give platform, date and settings; update the matching `references/*.md` and the rate table in `scripts/cost_calc.py`.
+- Change the canonical `skills/seedance25-director/` first, then the language folders. `AGENTS.md` and `GEMINI.md` are pointers only.
 
-## 许可证
+## License
 
-本仓库采用 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)（署名-非商业性使用）许可：可自由使用、修改、分享，需署名，禁止商业用途。
+Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) (Attribution-NonCommercial): free to use, adapt and share with attribution; no commercial use.
 
 ## 联系与支持 / Contact & Support
 
