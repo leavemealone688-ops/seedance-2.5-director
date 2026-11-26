@@ -91,3 +91,14 @@ cd seedance25-skill
 ## 许可证
 
 本仓库采用 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)（署名-非商业性使用）许可：可自由使用、修改、分享，需署名，禁止商业用途。
+
+## 联系与支持 / Contact & Support
+
+作者：Jason Oh（Director of Jason Short Dramas）
+
+- 合作 / 定制 / 商务：jasonshortdramas@gmail.com
+- YouTube / Instagram：[@jasonshortdramas](https://www.youtube.com/@jasonshortdramas)
+
+如果这个 skill 帮到了你，欢迎请作者喝杯咖啡 ☕ If this skill helped you, consider buying me a coffee.
+
+<img src="assets/alipay.jpg" alt="支付宝 Alipay" width="220">
